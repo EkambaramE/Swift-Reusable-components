@@ -18,4 +18,17 @@ extension UILabel {
         return newsString.copy() as! NSAttributedString
     }
     
+    
+    func lineSpacing(text: String) -> NSAttributedString {
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 5
+        
+        let attrString = NSMutableAttributedString(string: text)
+        attrString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
+        
+        return attrString
+    }
+    
+    
 }
